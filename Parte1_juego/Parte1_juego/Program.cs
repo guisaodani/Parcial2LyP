@@ -47,7 +47,9 @@
                     Console.WriteLine("!HAS GANADO¡");
                 }
 
-                Console.Write("Desean un nuevo tirito");
+                Console.Write("¿Desean un nuevo tirito?");
+                string retornar = Console.ReadLine().ToLower();
+                if (retornar == "no") { volver = false; }
             }
                       
         }
