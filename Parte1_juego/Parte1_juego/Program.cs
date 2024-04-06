@@ -8,6 +8,17 @@
         //variables
         double Njugadores,jugador1,jugador2,jugador3,jugador4;
 
+        Console.Write("Ingrese la cantidad de Jugadores");
+        Njugadores = double.Parse(Console.ReadLine());
+
+        for (int i = 0; i <= Njugadores; ++i)
+        {
+            Console.WriteLine($"Jugador {i} ingresa tu numeror a adivinar: ");
+            jugador1 = double.Parse(Console.ReadLine());
+            if()
+        }
+
+
 
 
     }
