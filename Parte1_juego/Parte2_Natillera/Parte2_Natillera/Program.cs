@@ -50,21 +50,26 @@
                     string hacerPrestamo = Console.ReadLine().ToLower();
                     if (hacerPrestamo == "si")
                     {
-                        Console.Write("Ingrese el Valor del prestamo: ");
-                        Prestamo = Convert.ToDecimal(Console.ReadLine());
-                        TotalPrestamo += Prestamo;
-
-                    }
-                    
-                   
                         
-
+                        
+                            Console.Write("Ingrese el Valor del prestamo, menor o igual a lo que llevas ahorrado: ");
+                            Prestamo = Convert.ToDecimal(Console.ReadLine());
+                        if (Prestamo <= Ahorrado)
+                        {
+                            Console.WriteLine("Prestamos Aprobado");
+                            TotalPrestamo += Prestamo;
+                        }
+                        else { Console.WriteLine("No te podemos prestar"); }
+                                                   
+                    }
+                                                                              
                     Console.Write($"Mes {mes}\n" +
                                   $"Aportes: {aporteMensual:C}\n" +
                                   $"Tasa: {tasaMensual}% \n" +
                                   $"Rendiemiento: {rendimientoMensual:C}\n" +
                                   $"Bono: {bonoMensual:C}\n");
-                    Console.Write($"Multa: {MultaMensual:C}");
+                    Console.Write($"Multa: {MultaMensual:C}\n");
+                    Console.Write($"Prestamos: {TotalPrestamo:C}\n");
 
                                   
                     Console.Write("\n");
@@ -73,18 +78,22 @@
                 }
                 TotalSocio = socio + 1;
 
-                
-            }
-            Console.Write("-------------------------------------------\n");
-            Console.Write("-------------------------------------------\n");
-            aporteTotalNeto = rendimientoTotal + aporteTotal + bonoTotal;
-            Console.Write($"Aportes totales: {aporteTotal:C}\n");
-            Console.Write($"Redimiento Total: {rendimientoTotal:C}\n");
-            Console.Write($"Bonos totales: {bonoTotal:C} \n");
-            Console.Write("-------------------------------------------\n");
-            Console.Write("-------------------------------------------\n");
-            Console.Write($"Total neto: {aporteTotalNeto:C}\n");
+                Console.Write("-------------------------------------------\n");
+                Console.Write("-------------------------------------------\n");
+                aporteTotalNeto = (rendimientoTotal + aporteTotal + bonoTotal) - TotalPrestamo;
+                Console.Write($"Aportes totales: {aporteTotal:C}\n");
+                Console.Write($"Redimiento Total: {rendimientoTotal:C}\n");
+                Console.Write($"Bonos totales: {bonoTotal:C} \n");
+                Console.Write("-------------------------------------------\n");
+                Console.Write("-------------------------------------------\n");
+                Console.Write($"Total neto: {aporteTotalNeto:C}\n");
+                Console.Write($"Total Multas: {Multatotal:C}\n");
+                Console.Write($"Total Prestamos: {TotalPrestamo:C}\n");
+                Console.Write("_______________________________________________________________\n");
 
+
+            }
+                               
             Console.WriteLine(" ");
             Console.WriteLine(" ");
             Console.WriteLine("Desea continuar en la natillera? (s/n)");
