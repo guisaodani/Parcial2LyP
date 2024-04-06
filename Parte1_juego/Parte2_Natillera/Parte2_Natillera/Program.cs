@@ -21,6 +21,7 @@
             
             for (int socio = 1; socio <= 2; socio++)
             {
+                Console.Clear();
                 Console.WriteLine($"Socio {socio} ingrese los siguientes datos: ");
                 Console.WriteLine( "___________________________________________" );
                 for (int mes = 1; mes <= 12; mes++)
@@ -47,12 +48,10 @@
                     }
                     Ahorrado = rendimientoTotal + aporteTotal + bonoTotal;
 
-                    Console.Write("Desea hacer un prestamo?(s/n)");
+                    Console.Write("Desea hacer un prestamo?(si/no)");
                     string hacerPrestamo = Console.ReadLine().ToLower();
                     if (hacerPrestamo == "si")
-                    {
-                        
-                        
+                    {                                              
                             Console.Write("Ingrese el Valor del prestamo, menor o igual a lo que llevas ahorrado: ");
                             Prestamo = Convert.ToDecimal(Console.ReadLine());
                         if (Prestamo <= Ahorrado)
@@ -73,7 +72,8 @@
                                   $"Bono: {bonoMensual:C}\n");
                     Console.Write($"Multa: {MultaMensual:C}\n");
                     Console.Write($"Prestamos: {TotalPrestamo:C}\n");
-                    Console.Write($"2.5%\n");
+                    Console.Write($"Tasa interes prestamos: 2.5%\n");
+                    
 
                                   
                     Console.Write("\n");
@@ -84,7 +84,7 @@
 
                 Console.Write("-------------------------------------------\n");
                 Console.Write("-------------------------------------------\n");
-                aporteTotalNeto = (rendimientoTotal + aporteTotal + bonoTotal) - TotalPrestamo;
+                aporteTotalNeto = (rendimientoTotal + aporteTotal + bonoTotal) - TotalPrestamo-interesTotal;
                 Console.Write($"Aportes totales: {aporteTotal:C}\n");
                 Console.Write($"Redimiento Total: {rendimientoTotal:C}\n");
                 Console.Write($"Bonos totales: {bonoTotal:C} \n");
@@ -94,6 +94,7 @@
                 Console.Write($"Total Multas: {Multatotal:C}\n");
                 Console.Write($"Total Prestamos: {TotalPrestamo:C}\n");
                 Console.Write("_______________________________________________________________\n");
+                Console.ReadKey();
 
 
             }
