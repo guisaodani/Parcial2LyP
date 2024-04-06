@@ -9,7 +9,7 @@
 
         while (volver)
         {
-            decimal aporteMensual = 0, rendimientoMensual = 0, aporteTotal = 0, rendimientoTotal = 0, bonoMensual = 0, bonoTotal = 0, aporteTotalNeto, tasaMensual;
+            decimal aporteMensual = 0, rendimientoMensual = 0, aporteTotal = 0, rendimientoTotal = 0, bonoMensual = 0, bonoTotal = 0, aporteTotalNeto, tasaMensual,MultaMensual=0,Multatotal=0,Ahorrado=0,Prestamo,TotalPrestamo=0;
             
 
             //class Random
@@ -36,16 +36,37 @@
                         bonoMensual = aporteMensual * (decimal)BONO;
                         bonoTotal += bonoMensual;
                     }
-                    if (aporteMensual == 0) { decimal Multa = 20000; }
 
                     aporteTotal += aporteMensual;
                     rendimientoTotal += rendimientoMensual;
+
+                    if (aporteMensual == 0) 
+                    { MultaMensual = 20000;
+                        Multatotal += MultaMensual;
+                    }
+                    Ahorrado = rendimientoTotal + aporteTotal + bonoTotal;
+
+                    Console.Write("Desea hacer un prestamo?(s/n)");
+                    string hacerPrestamo = Console.ReadLine().ToLower();
+                    if (hacerPrestamo == "si")
+                    {
+                        Console.Write("Ingrese el Valor del prestamo: ");
+                        Prestamo = Convert.ToDecimal(Console.ReadLine());
+                        TotalPrestamo += Prestamo;
+
+                    }
+                    
+                   
+                        
 
                     Console.Write($"Mes {mes}\n" +
                                   $"Aportes: {aporteMensual:C}\n" +
                                   $"Tasa: {tasaMensual}% \n" +
                                   $"Rendiemiento: {rendimientoMensual:C}\n" +
                                   $"Bono: {bonoMensual:C}\n");
+                    Console.Write($"Multa: {MultaMensual:C}");
+
+                                  
                     Console.Write("\n");
 
 
