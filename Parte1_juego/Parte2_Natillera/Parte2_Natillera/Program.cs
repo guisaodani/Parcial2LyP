@@ -26,6 +26,7 @@
                 {
                     Console.Write($"ingrese cantidad que desea ahorrar en el mes {mes}: ");
                     aporteMensual = Convert.ToDecimal(Console.ReadLine());
+                    Console.Write("\n");
 
                     tasaMensual = (decimal)random.Next(1, 51) / 10;
                     rendimientoMensual = aporteMensual * (tasaMensual / 100);
@@ -35,6 +36,7 @@
                         bonoMensual = aporteMensual * (decimal)BONO;
                         bonoTotal += bonoMensual;
                     }
+                    if (aporteMensual == 0) { decimal Multa = 20000; }
 
                     aporteTotal += aporteMensual;
                     rendimientoTotal += rendimientoMensual;
