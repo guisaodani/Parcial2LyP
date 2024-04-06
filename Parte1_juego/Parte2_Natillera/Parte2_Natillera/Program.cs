@@ -6,6 +6,7 @@
         Console.Write("************************NATILLERA**************************************************\n");
         bool volver = true;
         const double BONO = 0.4; //snake case ej.(HOLA_MUNDO)
+        const double TASA_PRESTAMO = 2.5; //snake case ej.(HOLA_MUNDO)
 
         while (volver)
         {
