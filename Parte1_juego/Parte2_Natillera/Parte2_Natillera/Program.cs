@@ -1,24 +1,27 @@
 ﻿internal class Program
 {
     private static void Main(string[] args)
+
     {
+        Console.Write("************************NATILLERA**************************************************\n");
         bool volver = true;
         const double BONO = 0.4; //snake case ej.(HOLA_MUNDO)
 
         while (volver)
         {
             decimal aporteMensual = 0, rendimientoMensual = 0, aporteTotal = 0, rendimientoTotal = 0, bonoMensual = 0, bonoTotal = 0, aporteTotalNeto, tasaMensual;
-            ;
+            
 
             //class Random
             
             Random random = new Random();// esta es la forma de instanciar una clase en objeto
 
-            int TotalSocio;
-            int Socio =2;
-            for (int i = 1; i <= 2; i++)
+            int TotalSocio=0;
+            
+            for (int socio = 1; socio <= 2; socio++)
             {
-                Console.Write($"Socio {i} ingrese los siguientes datos: ");
+                Console.WriteLine($"Socio {socio} ingrese los siguientes datos: ");
+                Console.WriteLine( "___________________________________________" );
                 for (int mes = 1; mes <= 12; mes++)
                 {
                     Console.Write($"ingrese cantidad que desea ahorrar en el mes {mes}: ");
@@ -41,26 +44,30 @@
                                   $"Tasa: {tasaMensual}% \n" +
                                   $"Rendiemiento: {rendimientoMensual:C}\n" +
                                   $"Bono: {bonoMensual:C}\n");
+                    Console.Write("\n");
+
 
                 }
+                TotalSocio = socio + 1;
 
-                Console.Write("-------------------------------------------\n");
-                Console.Write("-------------------------------------------\n");
-                aporteTotalNeto = rendimientoTotal + aporteTotal + bonoTotal;
-                Console.Write($"Aportes totales: {aporteTotal:C}\n");
-                Console.Write($"Redimiento Total: {rendimientoTotal:C}\n");
-                Console.Write($"Bonos totales: {bonoTotal:C} \n");
-                Console.Write("-------------------------------------------\n");
-                Console.Write("-------------------------------------------\n");
-                Console.Write($"Total neto: {aporteTotalNeto:C}\n");
-
-                Console.WriteLine(" ");
-                Console.WriteLine(" ");
-                Console.WriteLine("Desea continuar en la natillera? (s/n)");
-                string continuar = Console.ReadLine().ToLower();
-
-                if (continuar == "n") volver = false;
+                
             }
+            Console.Write("-------------------------------------------\n");
+            Console.Write("-------------------------------------------\n");
+            aporteTotalNeto = rendimientoTotal + aporteTotal + bonoTotal;
+            Console.Write($"Aportes totales: {aporteTotal:C}\n");
+            Console.Write($"Redimiento Total: {rendimientoTotal:C}\n");
+            Console.Write($"Bonos totales: {bonoTotal:C} \n");
+            Console.Write("-------------------------------------------\n");
+            Console.Write("-------------------------------------------\n");
+            Console.Write($"Total neto: {aporteTotalNeto:C}\n");
+
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine("Desea continuar en la natillera? (s/n)");
+            string continuar = Console.ReadLine().ToLower();
+
+            if (continuar == "n") volver = false;
 
         }
     }
