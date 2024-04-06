@@ -6,9 +6,9 @@
         Console.Write("****************************************************************");
 
         //variables
-        double Njugadores,jugador1,jugador2,jugador3,jugador4,numSecreto;
+        double Njugadores,jugador,numSecreto=0;
 
-        Console.Write("Ingrese la cantidad de Jugadores");
+        Console.Write("Ingrese la cantidad de Jugadores: ");
         Njugadores = double.Parse(Console.ReadLine());
 
         Random numAleatorio = new Random();
@@ -26,11 +26,23 @@
         }
         
 
-        for (int i = 0; i <= Njugadores; ++i)
+        for (int i = 1; i <= Njugadores; ++i)
         {
-            Console.WriteLine($"Jugador {i} ingresa tu numeror a adivinar: ");
-            jugador1 = double.Parse(Console.ReadLine());
-            if(jugador1)
+            Console.WriteLine($"Jugador {i} ingresa tu numeror para adivinar: ");
+            jugador = double.Parse(Console.ReadLine());
+            if (jugador > numSecreto)
+            {
+                Console.WriteLine("MENOR");
+            }
+            else if (jugador < numSecreto)
+            {
+                Console.WriteLine("MAYOR");
+            }
+            else if (jugador == numSecreto)
+            {
+                Console.WriteLine("!HAS GANADO¡");
+            }
+            
         }
 
 
