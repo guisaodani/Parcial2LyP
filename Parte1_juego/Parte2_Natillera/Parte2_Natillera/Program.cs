@@ -10,7 +10,7 @@
 
         while (volver)
         {
-            decimal aporteMensual = 0, rendimientoMensual = 0, aporteTotal = 0, rendimientoTotal = 0, bonoMensual = 0, bonoTotal = 0, aporteTotalNeto, tasaMensual,MultaMensual=0,Multatotal=0,Ahorrado=0,Prestamo,TotalPrestamo=0;
+            decimal aporteMensual = 0, rendimientoMensual = 0, aporteTotal = 0, rendimientoTotal = 0, bonoMensual = 0, bonoTotal = 0, aporteTotalNeto, tasaMensual,MultaMensual=0,Multatotal=0,Ahorrado=0,Prestamo,TotalPrestamo=0,interesPrestamo=0,interesTotal=0;
             
 
             //class Random
@@ -58,6 +58,8 @@
                         if (Prestamo <= Ahorrado)
                         {
                             Console.WriteLine("Prestamos Aprobado");
+                            interesPrestamo = Prestamo * ((decimal)2.5/ 100);
+                            interesTotal+= interesPrestamo;
                             TotalPrestamo += Prestamo;
                         }
                         else { Console.WriteLine("No te podemos prestar"); }
@@ -71,6 +73,7 @@
                                   $"Bono: {bonoMensual:C}\n");
                     Console.Write($"Multa: {MultaMensual:C}\n");
                     Console.Write($"Prestamos: {TotalPrestamo:C}\n");
+                    Console.Write($"2.5%\n");
 
                                   
                     Console.Write("\n");
