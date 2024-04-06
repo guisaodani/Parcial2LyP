@@ -7,6 +7,10 @@
 
         //variables
         double Njugadores,jugador,numSecreto=0;
+        bool volver = true;
+
+        while (volver) 
+        { 
 
         Console.Write("Ingrese la cantidad de Jugadores: ");
         Njugadores = double.Parse(Console.ReadLine());
@@ -24,29 +28,29 @@
         {
             numSecreto = numAleatorio.Next(0, 200);
         }
-        
 
-        for (int i = 1; i <= Njugadores; ++i)
-        {
-            Console.WriteLine($"Jugador {i} ingresa tu numeror para adivinar: ");
-            jugador = double.Parse(Console.ReadLine());
-            if (jugador > numSecreto)
+
+            for (int i = 1; i <= Njugadores; ++i)
             {
-                Console.WriteLine("MENOR");
+                Console.WriteLine($"Jugador {i} ingresa tu numeror para adivinar: ");
+                jugador = double.Parse(Console.ReadLine());
+                if (jugador > numSecreto)
+                {
+                    Console.WriteLine("MENOR");
+                }
+                else if (jugador < numSecreto)
+                {
+                    Console.WriteLine("MAYOR");
+                }
+                else if (jugador == numSecreto)
+                {
+                    Console.WriteLine("!HAS GANADO¡");
+                }
+
+                Console.Write("Desean un nuevo tirito");
             }
-            else if (jugador < numSecreto)
-            {
-                Console.WriteLine("MAYOR");
-            }
-            else if (jugador == numSecreto)
-            {
-                Console.WriteLine("!HAS GANADO¡");
-            }
-            
+                      
         }
-
-
-
 
     }
 }
