@@ -11,11 +11,13 @@
         Console.Write("Ingrese la cantidad de Jugadores");
         Njugadores = double.Parse(Console.ReadLine());
 
+        Random numaleatorio = new Random();
+
         for (int i = 0; i <= Njugadores; ++i)
         {
             Console.WriteLine($"Jugador {i} ingresa tu numeror a adivinar: ");
             jugador1 = double.Parse(Console.ReadLine());
-            if()
+            if(jugador1)
         }
 
 
