@@ -10,8 +10,9 @@
         bool volver = true;
 
         while (volver) 
-        { 
+        {
 
+            
         Console.Write("Ingrese la cantidad de Jugadores: ");
         Njugadores = double.Parse(Console.ReadLine());
 
@@ -45,13 +46,13 @@
                 else if (jugador == numSecreto)
                 {
                     Console.WriteLine("!HAS GANADO¡");
-                }
-
-                Console.Write("¿Desean un nuevo tirito?");
-                string retornar = Console.ReadLine().ToLower();
-                if (retornar == "no") { volver = false; }
+                }               
             }
-                      
+            Console.Write("¿Desean un nuevo tirito?");
+            string retornar = Console.ReadLine().ToLower();
+            if (retornar == "no") { volver = false; }
+            
+
         }
 
     }
